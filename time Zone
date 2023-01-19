@@ -1,0 +1,27 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
+const date = new Date(2023, 1, 1, 19);
+const CurrTime = date.getHours();
+console.log(CurrTime);
+let greeting = "";
+const custumStyle = {
+  color: ""
+};
+if (CurrTime < 12) {
+  greeting = "Good Morning";
+  custumStyle.color = "red";
+} else if (CurrTime < 18) {
+  greeting = "Good AfterNoon";
+  custumStyle.color = "blue";
+} else {
+  greeting = "good night";
+  custumStyle.color = "Yellow";
+}
+
+ReactDOM.render(
+  <div>
+    <h1 style={custumStyle}>{greeting}</h1>
+  </div>,
+  document.getElementById("root")
+);
